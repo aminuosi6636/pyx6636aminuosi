@@ -1,0 +1,134 @@
+:root {
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #eaece7;
+  background: #151816;
+  font-synthesis: none;
+  line-height: 1.6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 760px; }
+button, input { font: inherit; }
+button {
+  cursor: pointer;
+  background: #d5e7b2;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #24301b;
+}
+button:disabled { opacity: .5; cursor: default; }
+button:focus-visible, input:focus-visible { outline: 2px solid #d5e7b2; outline-offset: 3px; }
+p { color: #a7b29f; font-size: 13px; }
+h2 { font-size: 20px; font-weight: 500; }
+.app-shell { min-height: 100vh; }
+.main-content { width: 100%; max-width: 1700px; margin: auto; padding: 0 clamp(20px, 3vw, 52px); }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 106px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #30382e;
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.brand-mark { color: #d5e7b2; font-size: 32px; }
+.brand h1 { font-size: 24px; margin: 0; font-weight: 600; }
+.brand p { margin: 2px 0 0; font-size: 12px; color: #a1af97; }
+.local-badge, .eyebrow { font-size: 11px; color: #a1af97; }
+.local-badge { border: 1px solid #3a4535; border-radius: 20px; padding: 5px 13px; }
+.root-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border: 1px solid #354030;
+  background: #20271e;
+  border-radius: 12px;
+}
+.root-toolbar > div:first-child { min-width: 0; flex: 1; }
+.root-toolbar p { margin: 4px 0 0; overflow-wrap: anywhere; font-size: 12px; }
+.toolbar-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.secondary { background: #2b3526; color: #d5e7b2; border-color: #424f38; font-size: 12px; }
+.list-title { display: flex; justify-content: space-between; color: #a7b29f; font-size: 12px; margin: 18px 0 10px; }
+.listen-status { color: #c0d5a0; font-size: 11px; }
+.rename-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(290px, 25vw, 365px);
+  height: clamp(470px, calc(100vh - 300px), 1080px);
+  border: 1px solid #354030;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1b211a;
+}
+.file-list { min-height: 0; height: 100%; overflow-y: auto; padding: 9px; scrollbar-color: #45543a #1b211a; }
+.file-row {
+  display: flex;
+  width: 100%;
+  min-height: 111px;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  background: transparent;
+  color: #eaece7;
+  text-align: left;
+  border-radius: 9px;
+  border: 1px solid transparent;
+}
+.file-row + .file-row { margin-top: 4px; }
+.file-row:hover { background: #273123; }
+.file-row.selected { background: #2c3a24; border-color: #546b3e; }
+.video-thumb {
+  display: flex;
+  width: 176px;
+  height: 99px;
+  flex: 0 0 176px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #43523c;
+  border-radius: 7px;
+  background: #151c17;
+}
+.video-thumb img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.video-thumb-placeholder { font-size: 24px; color: #8fa981; }
+.file-name { min-width: 0; font-size: 14px; overflow-wrap: anywhere; }
+.file-name small { display: block; color: #9da998; font-size: 11px; margin-top: 5px; }
+.count-editor { display: flex; flex-direction: column; min-width: 0; min-height: 0; border-left: 1px solid #354030; padding: 28px 26px; background: #20271e; }
+.count-editor h2 { margin: 8px 0 18px; font-size: 19px; }
+.selected-filename { font-size: 12px; overflow-wrap: anywhere; min-height: 48px; color: #c4cfba; }
+.count-editor label { font-size: 13px; }
+.count-field { display: flex; gap: 10px; align-items: center; margin: 8px 0 18px; }
+.count-field input { width: 100%; min-width: 0; padding: 9px 11px; border: 1px solid #4c5d3c; border-radius: 6px; background: #151c12; color: #edf1e7; font-size: 22px; }
+.count-field span { font-size: 13px; color: #c4cfba; }
+.apply-button { width: 100%; font-size: 13px; }
+.editor-hint { font-size: 11px; margin: 14px 0 0; color: #8d9b81; }
+.cat-signature { display: flex; flex: 1; min-height: 0; flex-direction: column; align-items: center; justify-content: center; gap: 15px; padding: 18px 0 8px; }
+.cat-signature img { display: block; width: min(100%, 310px); max-height: min(28vh, 260px); object-fit: contain; }
+.cat-signature span { color: #c2d0b5; font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: .05em; white-space: nowrap; }
+.empty-list { padding: 50px 25px; text-align: center; }
+.pagination { display: flex; justify-content: center; gap: 20px; align-items: center; margin: 14px 0; font-size: 12px; }
+.pending-files { border: 1px solid #4c4531; padding: 10px 15px; border-radius: 8px; margin-top: 14px; }
+.pending-files p { font-size: 11px; margin: 4px 0; color: #d2bc90; }
+.notice { font-size: 12px; color: #e0c69b; background: #383124; border: 1px solid #4c4230; border-radius: 8px; padding: 12px 18px; margin: 16px 0; }
+.setup-panel { border: 1px solid #354030; background: #20271e; border-radius: 12px; min-height: 330px; padding: 45px 30px; text-align: center; }
+.panel-icon { display: block; color: #d5e7b2; font-size: 36px; }
+.setup-panel p { max-width: 540px; margin: 12px auto 24px; }
+.diagnostics { display: flex; justify-content: center; gap: 40px; font-size: 12px; }
+.diagnostics dd { margin: 0; }
+.diagnostics dt { color: #a7b29f; }
+details { font-size: 11px; text-align: left; margin: auto; max-width: 600px; background: #192015; padding: 12px; }
+details p { overflow-wrap: anywhere; }
+footer { text-align: center; color: #7f8b75; font-size: 10px; padding: 17px 0; }
+.fatal { padding: 40px; }
+@media(max-width: 1050px) {
+  .main-content { padding: 0 18px; }
+  .rename-workspace { grid-template-columns: minmax(0, 1fr) 280px; }
+  .video-thumb { width: 128px; height: 72px; flex-basis: 128px; }
+  .file-row { min-height: 86px; }
+  .count-editor { padding: 20px 16px; }
+}
+@media(max-height: 760px) {
+  .cat-signature { gap: 10px; padding: 4px 0; }
+  .cat-signature img { max-height: 130px; }
+}

@@ -1,0 +1,38 @@
+[package]
+name = "local-video-library"
+version = "0.1.0"
+description = "Local desktop video material library"
+edition = "2021"
+rust-version = "1.85"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[lib]
+name = "video_library_lib"
+crate-type = ["rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-log = "2"
+tauri-plugin-single-instance = "2"
+tauri-plugin-dialog = "2"
+log = "0.4"
+serde = { version = "1", features = ["derive"] }
+rusqlite = { version = "0.37", features = ["bundled", "backup"] }
+blake3 = "1"
+uuid = { version = "1", features = ["v4"] }
+walkdir = "2"
+tempfile = "3"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+base64 = "0.22"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_Storage_FileSystem"] }
