@@ -32,6 +32,8 @@ jobs:
         run: npm ci
       - name: Test frontend and database schema
         run: npm test
+      - name: Build frontend for native tests
+        run: npm run build
       - name: Test native operations on macOS
         run: cargo test --locked --manifest-path src-tauri/Cargo.toml
       - name: Build app and DMG
